@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Meenakshi | Learning Experience Designer</title>
+
+  <!-- GOOGLE FONT -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,32 +42,38 @@
       overflow-x:hidden;
     }
 
+    img{
+      width:100%;
+      display:block;
+    }
+
     /* NAVBAR */
 
     nav{
       position:fixed;
       top:0;
+      left:0;
       width:100%;
       padding:18px 8%;
-      background:rgba(255,255,255,0.92);
+      background:rgba(255,255,255,0.95);
       backdrop-filter:blur(10px);
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       z-index:1000;
       box-shadow:0 2px 15px rgba(0,0,0,0.05);
     }
 
     nav h2{
       color:var(--primary);
-      font-size:1.5rem;
+      font-size:1.6rem;
       font-weight:700;
     }
 
     nav ul{
-      list-style:none;
       display:flex;
-      gap:30px;
+      gap:28px;
+      list-style:none;
     }
 
     nav ul li a{
@@ -84,8 +93,8 @@
       min-height:100vh;
       padding:140px 8% 90px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:60px;
       background:linear-gradient(135deg,#eff6ff,#ffffff);
     }
@@ -125,6 +134,7 @@
       font-weight:600;
       transition:0.3s;
       display:inline-block;
+      cursor:pointer;
     }
 
     .btn-primary{
@@ -147,6 +157,8 @@
       color:white;
     }
 
+    /* SKILLS */
+
     .hero-right{
       flex:1;
       background:white;
@@ -157,18 +169,17 @@
     }
 
     @keyframes float{
-      0%{transform:translateY(0px);}
+      0%{transform:translateY(0);}
       50%{transform:translateY(-10px);}
-      100%{transform:translateY(0px);}
+      100%{transform:translateY(0);}
     }
 
     .hero-right h3{
       margin-bottom:25px;
-      color:#0f172a;
     }
 
     .skill{
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
 
     .skill-top{
@@ -181,7 +192,7 @@
     .bar{
       width:100%;
       height:10px;
-      background:#e2e8f0;
+      background:#dbeafe;
       border-radius:50px;
       overflow:hidden;
     }
@@ -206,7 +217,6 @@
     .section-title h2{
       font-size:2.7rem;
       margin-bottom:15px;
-      color:#0f172a;
     }
 
     .section-title p{
@@ -226,9 +236,9 @@
       padding:30px;
       border-radius:24px;
       box-shadow:var(--shadow);
+      transition:0.3s;
       position:relative;
       overflow:hidden;
-      transition:0.3s;
     }
 
     .project-card:hover{
@@ -247,12 +257,11 @@
 
     .project-card h3{
       margin-bottom:15px;
-      color:#0f172a;
     }
 
     .project-card p{
-      line-height:1.8;
       color:var(--gray);
+      line-height:1.8;
       margin-bottom:20px;
     }
 
@@ -260,7 +269,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin-bottom:22px;
+      margin-bottom:20px;
     }
 
     .tag{
@@ -274,16 +283,16 @@
 
     .project-links{
       display:flex;
-      flex-wrap:wrap;
       gap:12px;
+      flex-wrap:wrap;
     }
 
     .project-links a{
       text-decoration:none;
-      padding:10px 16px;
-      border-radius:10px;
       background:#eff6ff;
       color:#2563eb;
+      padding:10px 16px;
+      border-radius:10px;
       font-size:0.9rem;
       font-weight:600;
       transition:0.3s;
@@ -294,7 +303,7 @@
       color:white;
     }
 
-    /* VIDEOS */
+    /* VIDEO SECTION */
 
     .video-grid{
       display:grid;
@@ -338,7 +347,7 @@
       margin-bottom:20px;
     }
 
-    /* GALLERY */
+    /* LXD GALLERY */
 
     .gallery{
       display:grid;
@@ -355,7 +364,7 @@
     }
 
     .gallery-item:hover{
-      transform:scale(1.02);
+      transform:translateY(-8px);
     }
 
     .gallery-placeholder{
@@ -364,12 +373,26 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight:600;
       color:#1e3a8a;
+      font-weight:600;
+    }
+
+    .gallery-item img{
+      height:220px;
+      object-fit:cover;
     }
 
     .gallery-content{
-      padding:20px;
+      padding:22px;
+    }
+
+    .gallery-content h3{
+      margin-bottom:12px;
+    }
+
+    .gallery-content p{
+      color:var(--gray);
+      line-height:1.8;
     }
 
     /* ABOUT */
@@ -381,8 +404,8 @@
     }
 
     .about p{
-      color:var(--gray);
       line-height:2;
+      color:var(--gray);
       margin-top:18px;
     }
 
@@ -422,7 +445,7 @@
       display:none;
       align-items:center;
       justify-content:center;
-      z-index:5000;
+      z-index:9999;
       padding:30px;
       backdrop-filter:blur(5px);
     }
@@ -434,10 +457,10 @@
     .video-modal-content{
       width:90%;
       max-width:1100px;
-      position:relative;
       background:black;
       border-radius:20px;
       overflow:hidden;
+      position:relative;
       animation:popup 0.3s ease;
     }
 
@@ -494,6 +517,10 @@
         font-size:3rem;
       }
 
+      .hero-buttons{
+        justify-content:center;
+      }
+
       nav{
         flex-direction:column;
         gap:15px;
@@ -502,12 +529,8 @@
       nav ul{
         flex-wrap:wrap;
         justify-content:center;
-        gap:18px;
       }
 
-      .hero-buttons{
-        justify-content:center;
-      }
     }
 
     @media(max-width:600px){
@@ -528,6 +551,7 @@
       #reviewFrame{
         height:60vh;
       }
+
     }
 
   </style>
@@ -564,9 +588,8 @@
       </h1>
 
       <p>
-        Passionate Learning Experience Designer with expertise in
-        instructional design, storyboarding, script writing,
-        safety training modules and engaging digital learning experiences.
+        Passionate Learning Experience Designer with expertise in instructional design,
+        storyboarding, script writing, eLearning development and safety training modules.
       </p>
 
       <div class="hero-buttons">
@@ -612,14 +635,6 @@
         <div class="bar"><div style="width:94%"></div></div>
       </div>
 
-      <div class="skill">
-        <div class="skill-top">
-          <span>Safety Training Modules</span>
-          <span>96%</span>
-        </div>
-        <div class="bar"><div style="width:96%"></div></div>
-      </div>
-
     </div>
 
   </section>
@@ -630,7 +645,7 @@
 
     <div class="section-title hidden">
       <h2>eLearning Projects</h2>
-      <p>Scripts, storyboards and review modules developed for workplace learning.</p>
+      <p>Instructional design projects including scripts, storyboards and review links.</p>
     </div>
 
     <div class="project-grid">
@@ -640,8 +655,8 @@
         <h3>Grinding Safety</h3>
 
         <p>
-          Complete safety training module covering hazards,
-          PPE, grinding wheel inspection and operational safety.
+          Safety training module covering grinding hazards, PPE,
+          wheel inspection and operational procedures.
         </p>
 
         <div class="tags">
@@ -663,8 +678,8 @@
         <h3>Emergency Preparedness</h3>
 
         <p>
-          Emergency response module covering evacuation,
-          emergency communication and mock drills.
+          Emergency response module focused on evacuation,
+          communication flow and emergency drills.
         </p>
 
         <div class="tags">
@@ -686,8 +701,8 @@
         <h3>Electrical Safety & LOTO</h3>
 
         <p>
-          Interactive module explaining electrical hazards,
-          lockout/tagout procedures and isolation systems.
+          Interactive learning module explaining electrical hazards,
+          isolation systems and LOTO procedures.
         </p>
 
         <div class="tags">
@@ -704,63 +719,6 @@
 
       </div>
 
-      <div class="project-card hidden">
-
-        <h3>Occupational Safety</h3>
-
-        <p>
-          Occupational safety awareness module focused on
-          hazard identification and preventive measures.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Review Link</span>
-        </div>
-
-        <div class="project-links">
-          <a href="#">Review Module</a>
-        </div>
-
-      </div>
-
-      <div class="project-card hidden">
-
-        <h3>Environmental Compliances</h3>
-
-        <p>
-          Environmental training module focused on sustainability,
-          compliance procedures and workplace awareness.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Review Link</span>
-        </div>
-
-        <div class="project-links">
-          <a href="#">Review Module</a>
-        </div>
-
-      </div>
-
-      <div class="project-card hidden">
-
-        <h3>Management System</h3>
-
-        <p>
-          Integrated management system learning module covering
-          documentation flow and process compliance.
-        </p>
-
-        <div class="tags">
-          <span class="tag">Review Link</span>
-        </div>
-
-        <div class="project-links">
-          <a href="#">Review Module</a>
-        </div>
-
-      </div>
-
     </div>
 
   </section>
@@ -771,12 +729,10 @@
 
     <div class="section-title hidden">
       <h2>Training Videos</h2>
-      <p>Instructional and safety awareness video projects.</p>
+      <p>Safety awareness and instructional training video projects.</p>
     </div>
 
     <div class="video-grid">
-
-      <!-- VIDEO 1 -->
 
       <div class="video-card hidden">
 
@@ -787,21 +743,22 @@
           <h3>Grinding Safety Video</h3>
 
           <p>
-            Safety training video demonstrating grinding operations,
-            wheel inspection and PPE requirements.
+            Safety training video demonstrating grinding operations
+            and PPE requirements.
           </p>
 
-          <a href="#"
+          <a
+            href="javascript:void(0)"
             class="btn btn-primary"
             onclick="openLocalVideo('videos/grinding-safety.mp4')">
+
             Watch Video
+
           </a>
 
         </div>
 
       </div>
-
-      <!-- VIDEO 2 -->
 
       <div class="video-card hidden">
 
@@ -812,21 +769,22 @@
           <h3>General Safety Awareness</h3>
 
           <p>
-            Workplace safety awareness video focused on
-            hazard prevention and employee responsibility.
+            Workplace safety awareness video focused on hazard prevention
+            and employee responsibility.
           </p>
 
-          <a href="#"
+          <a
+            href="javascript:void(0)"
             class="btn btn-primary"
             onclick="openLocalVideo('videos/general-safety.mp4')">
+
             Watch Video
+
           </a>
 
         </div>
 
       </div>
-
-      <!-- VIDEO 3 -->
 
       <div class="video-card hidden">
 
@@ -837,14 +795,17 @@
           <h3>Fire Safety Training</h3>
 
           <p>
-            Fire emergency awareness module covering evacuation,
-            extinguisher usage and emergency communication.
+            Fire emergency awareness module covering evacuation
+            and extinguisher usage.
           </p>
 
-          <a href="#"
+          <a
+            href="javascript:void(0)"
             class="btn btn-primary"
             onclick="openReviewLink('https://360.articulate.com/review/content/c35a34ae-15fe-467b-ad16-8c4747ea67d1/review')">
+
             Watch Video
+
           </a>
 
         </div>
@@ -855,43 +816,92 @@
 
   </section>
 
-  <!-- GALLERY -->
+  <!-- LXD WORKS -->
 
   <section id="lxd">
 
     <div class="section-title hidden">
+
       <h2>LXD Project Showcase</h2>
-      <p>Visual learning experience design samples and screen layouts.</p>
+
+      <p>
+        Visual learning experience design samples and eLearning screen showcases.
+      </p>
+
     </div>
 
     <div class="gallery">
 
       <div class="gallery-item hidden">
-        <div class="gallery-placeholder">Add Screenshot</div>
+
+        <div class="gallery-placeholder">
+          Add Screenshot
+        </div>
+
         <div class="gallery-content">
+
           <h3>Interactive Learning Screen</h3>
+
+          <p>
+            Engaging interactive learning screen designed for learner participation.
+          </p>
+
         </div>
+
       </div>
 
       <div class="gallery-item hidden">
-        <div class="gallery-placeholder">Add Screenshot</div>
-        <div class="gallery-content">
-          <h3>Scenario-Based Design</h3>
+
+        <div class="gallery-placeholder">
+          Add Screenshot
         </div>
+
+        <div class="gallery-content">
+
+          <h3>Scenario-Based Learning</h3>
+
+          <p>
+            Real-world scenario-based learning experience with decision-making flow.
+          </p>
+
+        </div>
+
       </div>
 
       <div class="gallery-item hidden">
-        <div class="gallery-placeholder">Add Screenshot</div>
-        <div class="gallery-content">
-          <h3>Gamified Learning Experience</h3>
+
+        <div class="gallery-placeholder">
+          Add Screenshot
         </div>
+
+        <div class="gallery-content">
+
+          <h3>Gamified eLearning</h3>
+
+          <p>
+            Gamified learning design focused on engagement and interaction.
+          </p>
+
+        </div>
+
       </div>
 
       <div class="gallery-item hidden">
-        <div class="gallery-placeholder">Add Screenshot</div>
-        <div class="gallery-content">
-          <h3>Responsive eLearning Layout</h3>
+
+        <div class="gallery-placeholder">
+          Add Screenshot
         </div>
+
+        <div class="gallery-content">
+
+          <h3>Responsive Learning Layout</h3>
+
+          <p>
+            Mobile responsive eLearning screen layout optimized for all devices.
+          </p>
+
+        </div>
+
       </div>
 
     </div>
@@ -909,12 +919,12 @@
       </div>
 
       <p>
-        I am a passionate Learning Experience Designer focused on creating
+        I am a Learning Experience Designer passionate about creating
         impactful learner-centric digital learning experiences.
       </p>
 
       <p>
-        My expertise includes instructional design, storyboarding,
+        My expertise includes instructional design, storyboard development,
         script writing, eLearning development and safety training solutions.
       </p>
 
@@ -936,7 +946,7 @@
 
   </footer>
 
-  <!-- VIDEO OVERLAY -->
+  <!-- VIDEO MODAL -->
 
   <div class="video-modal" id="videoModal">
 
@@ -990,6 +1000,8 @@
 
     function openLocalVideo(videoPath){
 
+      document.body.style.overflow = "hidden";
+
       modal.classList.add("active");
 
       reviewFrame.style.display = "none";
@@ -1005,6 +1017,8 @@
 
     function openReviewLink(url){
 
+      document.body.style.overflow = "hidden";
+
       modal.classList.add("active");
 
       video.pause();
@@ -1015,6 +1029,8 @@
     }
 
     function closeVideoModal(){
+
+      document.body.style.overflow = "auto";
 
       modal.classList.remove("active");
 
@@ -1036,7 +1052,7 @@
 
     });
 
-    // CLICK OUTSIDE CLOSE
+    // OUTSIDE CLICK CLOSE
 
     modal.addEventListener("click", function(e){
 

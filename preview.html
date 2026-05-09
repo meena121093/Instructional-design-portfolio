@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meenakshi | Learning Experience Designer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#f4f7fb;
+      color:#1f2937;
+      overflow-x:hidden;
+    }
+
+    :root{
+      --primary:#2563eb;
+      --secondary:#0f172a;
+      --light:#ffffff;
+      --gray:#6b7280;
+      --card:#ffffff;
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 8%;
+      z-index:1000;
+      box-shadow:0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    nav h2{
+      color:var(--primary);
+      font-size:1.5rem;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:var(--secondary);
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:var(--primary);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 8% 80px;
+      background:linear-gradient(135deg,#eff6ff,#ffffff);
+      gap:50px;
+    }
+
+    .hero-content{
+      flex:1;
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      line-height:1.1;
+      color:var(--secondary);
+      margin-bottom:20px;
+    }
+
+    .hero-content h1 span{
+      color:var(--primary);
+    }
+
+    .hero-content p{
+      color:var(--gray);
+      line-height:1.8;
+      margin-bottom:30px;
+      max-width:650px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:white;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(37,99,235,0.25);
+    }
+
+    .btn-outline{
+      border:2px solid var(--primary);
+      color:var(--primary);
+    }
+
+    .btn-outline:hover{
+      background:var(--primary);
+      color:white;
+    }
+
+    .hero-card{
+      flex:1;
+      background:var(--light);
+      padding:40px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-10px);}
+      100%{transform:translateY(0px);}
+    }
+
+    .hero-card h3{
+      margin-bottom:25px;
+      color:var(--secondary);
+    }
+
+    .skill{
+      margin-bottom:18px;
+    }
+
+    .skill span{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:8px;
+      font-size:0.95rem;
+    }
+
+    .bar{
+      width:100%;
+      height:10px;
+      background:#e5e7eb;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .bar div{
+      height:100%;
+      background:linear-gradient(90deg,#2563eb,#60a5fa);
+      border-radius:20px;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:2.6rem;
+      color:var(--secondary);
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:var(--gray);
+    }
+
+    /* PROJECTS */
+
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:var(--card);
+      border-radius:20px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      transition:0.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .project-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:5px;
+      background:linear-gradient(90deg,#2563eb,#60a5fa);
+    }
+
+    .project-card h3{
+      margin-bottom:15px;
+      color:var(--secondary);
+    }
+
+    .project-card p{
+      color:var(--gray);
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:25px;
+    }
+
+    .tag{
+      background:#dbeafe;
+      color:#1d4ed8;
+      padding:8px 14px;
+      border-radius:50px;
+      font-size:0.8rem;
+      font-weight:500;
+    }
+
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .links a{
+      text-decoration:none;
+      font-size:0.9rem;
+      padding:10px 16px;
+      border-radius:10px;
+      background:#eff6ff;
+      color:#2563eb;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .links a:hover{
+      background:#2563eb;
+      color:white;
+    }
+
+    /* VIDEO SECTION */
+
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .video-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:0.3s;
+    }
+
+    .video-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .video-thumb{
+      height:220px;
+      background:linear-gradient(135deg,#2563eb,#60a5fa);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:3rem;
+    }
+
+    .video-content{
+      padding:25px;
+    }
+
+    .video-content h3{
+      margin-bottom:12px;
+    }
+
+    .video-content p{
+      color:var(--gray);
+      line-height:1.7;
+      margin-bottom:18px;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+
+    .gallery-item{
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:0.3s;
+    }
+
+    .gallery-item:hover{
+      transform:scale(1.02);
+    }
+
+    .gallery-placeholder{
+      height:220px;
+      background:linear-gradient(135deg,#c7d2fe,#e0f2fe);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#1e3a8a;
+      font-weight:600;
+      font-size:1.1rem;
+    }
+
+    .gallery-content{
+      padding:18px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      background:linear-gradient(135deg,#eff6ff,#ffffff);
+      border-radius:30px;
+      padding:60px;
+    }
+
+    .about p{
+      color:var(--gray);
+      line-height:2;
+      margin-top:20px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:var(--secondary);
+      color:white;
+      text-align:center;
+      padding:35px 20px;
+      margin-top:80px;
+    }
+
+    footer p{
+      opacity:0.8;
+    }
+
+    /* SCROLL ANIMATION */
+
+    .hidden{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 0.8s ease;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-content h1{
+        font-size:3rem;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-btns{
+        justify-content:center;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .hero-content h1{
+        font-size:2.3rem;
+      }
+
+      section{
+        padding:70px 6%;
+      }
+
+      .about{
+        padding:35px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <h2>Meenakshi</h2>
+
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#lxd">LXD Works</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>
+        Learning Experience Designer
+        <br>
+        <span>& eLearning Developer</span>
+      </h1>
+
+      <p>
+        Passionate Learning Experience Designer with expertise in eLearning development,
+        instructional design, storyboarding, scripting, safety training modules,
+        and engaging digital learning experiences. Skilled in transforming technical
+        concepts into interactive and learner-friendly content.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View Portfolio</a>
+        <a href="#" class="btn btn-outline">Download Resume</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+
+      <h3>Core Skills</h3>
+
+      <div class="skill">
+        <span>
+          <p>Instructional Design</p>
+          <p>95%</p>
+        </span>
+        <div class="bar"><div style="width:95%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>
+          <p>Storyboarding</p>
+          <p>92%</p>
+        </span>
+        <div class="bar"><div style="width:92%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>
+          <p>Script Writing</p>
+          <p>90%</p>
+        </span>
+        <div class="bar"><div style="width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>
+          <p>eLearning Development</p>
+          <p>94%</p>
+        </span>
+        <div class="bar"><div style="width:94%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>
+          <p>Safety Training Modules</p>
+          <p>96%</p>
+        </span>
+        <div class="bar"><div style="width:96%"></div></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ELEARNING PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-title hidden">
+      <h2>eLearning Projects</h2>
+      <p>Instructional design projects including scripts, storyboards and development review links.</p>
+    </div>
+
+    <div class="project-grid">
+
+      <div class="project-card hidden">
+        <h3>Grinding Safety</h3>
+
+        <p>
+          Complete safety training module covering grinding wheel inspection,
+          hazards, PPE, operational procedures, and emergency response.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Storyboard</span>
+          <span class="tag">Script</span>
+          <span class="tag">Review Link</span>
+        </div>
+
+        <div class="links">
+          <a href="#">View Script</a>
+          <a href="#">View Storyboard</a>
+          <a href="#">Review Module</a>
+        </div>
+      </div>
+
+      <div class="project-card hidden">
+        <h3>Emergency Preparedness</h3>
+
+        <p>
+          Emergency response learning module focused on evacuation,
+          communication flow, first response actions and mock drills.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Storyboard</span>
+          <span class="tag">Script</span>
+          <span class="tag">Review Link</span>
+        </div>
+
+        <div class="links">
+          <a href="#">View Script</a>
+          <a href="#">View Storyboard</a>
+          <a href="#">Review Module</a>
+        </div>
+      </div>
+
+      <div class="project-card hidden">
+        <h3>Electrical Safety & LOTO</h3>
+
+        <p>
+          Interactive module explaining electrical hazards,
+          lockout/tagout procedures, isolation systems and workplace safety practices.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Storyboard</span>
+          <span class="tag">Script</span>
+          <span class="tag">Review Link</span>
+        </div>
+
+        <div class="links">
+          <a href="#">View Script</a>
+          <a href="#">View Storyboard</a>
+          <a href="#">Review Module</a>
+        </div>
+      </div>
+
+      <div class="project-card hidden">
+        <h3>Occupational Safety</h3>
+
+        <p>
+          Workplace occupational safety awareness module focused on
+          hazard identification and preventive safety measures.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Review Link</span>
+        </div>
+
+        <div class="links">
+          <a href="#">Review Module</a>
+        </div>
+      </div>
+
+      <div class="project-card hidden">
+        <h3>Environmental Compliances</h3>
+
+        <p>
+          Training module designed to educate employees on environmental
+          standards, sustainability and compliance procedures.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Review Link</span>
+        </div>
+
+        <div class="links">
+          <a href="#">Review Module</a>
+        </div>
+      </div>
+
+      <div class="project-card hidden">
+        <h3>Management System</h3>
+
+        <p>
+          Learning module introducing integrated management systems,
+          documentation flow and process compliance.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Review Link</span>
+        </div>
+
+        <div class="links">
+          <a href="#">Review Module</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VIDEOS -->
+
+  <section id="videos">
+
+    <div class="section-title hidden">
+      <h2>Training Videos</h2>
+      <p>Safety awareness and instructional training video projects.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-card hidden">
+        <div class="video-thumb">▶</div>
+
+        <div class="video-content">
+          <h3>Grinding Safety Video</h3>
+
+          <p>
+            Visual training video demonstrating safe grinding operations,
+            wheel inspection and PPE requirements.
+          </p>
+
+          <a href="#" class="btn btn-primary">Watch Video</a>
+        </div>
+      </div>
+
+      <div class="video-card hidden">
+        <div class="video-thumb">▶</div>
+
+        <div class="video-content">
+          <h3>General Safety Awareness</h3>
+
+          <p>
+            Workplace safety awareness video covering basic safety culture,
+            hazard prevention and employee responsibility.
+          </p>
+
+          <a href="#" class="btn btn-primary">Watch Video</a>
+        </div>
+      </div>
+
+      <div class="video-card hidden">
+        <div class="video-thumb">▶</div>
+
+        <div class="video-content">
+          <h3>Fire Safety Training</h3>
+
+          <p>
+            Fire emergency awareness video focused on evacuation,
+            extinguisher usage and emergency communication.
+          </p>
+
+          <a href="#" class="btn btn-primary">Watch Video</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LXD -->
+
+  <section id="lxd">
+
+    <div class="section-title hidden">
+      <h2>LXD Project Showcase</h2>
+      <p>Selected screenshots and visual learning experience design samples.</p>
+    </div>
+
+    <div class="gallery">
+
+      <div class="gallery-item hidden">
+        <div class="gallery-placeholder">Add Screenshot</div>
+        <div class="gallery-content">
+          <h3>Interactive Learning Screen</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item hidden">
+        <div class="gallery-placeholder">Add Screenshot</div>
+        <div class="gallery-content">
+          <h3>Scenario-Based Design</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item hidden">
+        <div class="gallery-placeholder">Add Screenshot</div>
+        <div class="gallery-content">
+          <h3>Gamified Learning Experience</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item hidden">
+        <div class="gallery-placeholder">Add Screenshot</div>
+        <div class="gallery-content">
+          <h3>Responsive eLearning Layout</h3>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about hidden">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+
+      <p>
+        I am a Learning Experience Designer passionate about creating impactful,
+        learner-centric digital learning experiences. My expertise includes
+        instructional design, storyboard development, script writing,
+        eLearning development, visual learning design, and safety training modules.
+      </p>
+
+      <p>
+        I specialize in converting complex technical information into engaging,
+        interactive and visually compelling learning content that improves learner
+        understanding and retention.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <h2>Meenakshi Portfolio</h2>
+    <br>
+    <p>Learning Experience Designer | Instructional Designer | eLearning Developer</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+
+      });
+
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  </script>
+
+</body>
+</html>

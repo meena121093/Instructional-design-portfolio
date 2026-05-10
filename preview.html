@@ -6,16 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Meenakshi | Learning Experience Designer</title>
-
-  <!-- GOOGLE FONT -->
+  <title>Meenakshi | Learning Experience Designer Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -30,9 +25,9 @@
       --primary:#2563eb;
       --secondary:#0f172a;
       --light:#ffffff;
-      --gray:#64748b;
+      --gray:#6b7280;
       --bg:#f4f7fb;
-      --shadow:0 10px 35px rgba(0,0,0,0.08);
+      --shadow:0 10px 30px rgba(0,0,0,0.08);
     }
 
     body{
@@ -42,43 +37,38 @@
       overflow-x:hidden;
     }
 
-    img{
-      width:100%;
-      display:block;
+    body.no-scroll{
+      overflow:hidden;
     }
-
-    /* NAVBAR */
 
     nav{
       position:fixed;
       top:0;
-      left:0;
       width:100%;
       padding:18px 8%;
-      background:rgba(255,255,255,0.95);
-      backdrop-filter:blur(10px);
       display:flex;
       justify-content:space-between;
       align-items:center;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
       z-index:1000;
-      box-shadow:0 2px 15px rgba(0,0,0,0.05);
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
     }
 
     nav h2{
       color:var(--primary);
       font-size:1.6rem;
-      font-weight:700;
     }
 
     nav ul{
       display:flex;
-      gap:28px;
       list-style:none;
+      gap:28px;
     }
 
     nav ul li a{
       text-decoration:none;
-      color:#111827;
+      color:var(--secondary);
       font-weight:500;
       transition:0.3s;
     }
@@ -87,11 +77,9 @@
       color:var(--primary);
     }
 
-    /* HERO */
-
     .hero{
       min-height:100vh;
-      padding:140px 8% 90px;
+      padding:130px 8% 90px;
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -99,42 +87,46 @@
       background:linear-gradient(135deg,#eff6ff,#ffffff);
     }
 
-    .hero-left{
+    .hero-content{
       flex:1;
     }
 
-    .hero-left h1{
+    .hero-content h1{
       font-size:4rem;
       line-height:1.1;
       margin-bottom:20px;
-      color:#0f172a;
+      color:var(--secondary);
     }
 
-    .hero-left h1 span{
+    .hero-content h1 span{
       color:var(--primary);
     }
 
-    .hero-left p{
-      line-height:1.9;
+    .hero-content p{
       color:var(--gray);
-      margin-bottom:35px;
+      line-height:1.9;
+      margin-bottom:30px;
       max-width:650px;
     }
 
-    .hero-buttons{
+    .hero-btns{
       display:flex;
-      gap:18px;
+      gap:20px;
       flex-wrap:wrap;
     }
 
     .btn{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
       padding:14px 28px;
       border-radius:12px;
+      border:none;
       text-decoration:none;
       font-weight:600;
-      transition:0.3s;
-      display:inline-block;
       cursor:pointer;
+      transition:0.3s;
+      font-size:0.95rem;
     }
 
     .btn-primary{
@@ -143,13 +135,14 @@
     }
 
     .btn-primary:hover{
-      transform:translateY(-4px);
-      box-shadow:0 12px 25px rgba(37,99,235,0.25);
+      transform:translateY(-3px);
+      box-shadow:0 10px 20px rgba(37,99,235,0.25);
     }
 
     .btn-outline{
       border:2px solid var(--primary);
       color:var(--primary);
+      background:transparent;
     }
 
     .btn-outline:hover{
@@ -157,9 +150,7 @@
       color:white;
     }
 
-    /* SKILLS */
-
-    .hero-right{
+    .hero-card{
       flex:1;
       background:white;
       padding:40px;
@@ -169,20 +160,21 @@
     }
 
     @keyframes float{
-      0%{transform:translateY(0);}
+      0%{transform:translateY(0px);}
       50%{transform:translateY(-10px);}
-      100%{transform:translateY(0);}
+      100%{transform:translateY(0px);}
     }
 
-    .hero-right h3{
+    .hero-card h3{
       margin-bottom:25px;
+      color:var(--secondary);
     }
 
     .skill{
-      margin-bottom:22px;
+      margin-bottom:18px;
     }
 
-    .skill-top{
+    .skill span{
       display:flex;
       justify-content:space-between;
       margin-bottom:8px;
@@ -192,18 +184,16 @@
     .bar{
       width:100%;
       height:10px;
-      background:#dbeafe;
-      border-radius:50px;
+      background:#e5e7eb;
+      border-radius:20px;
       overflow:hidden;
     }
 
     .bar div{
       height:100%;
+      border-radius:20px;
       background:linear-gradient(90deg,#2563eb,#60a5fa);
-      border-radius:50px;
     }
-
-    /* SECTION */
 
     section{
       padding:90px 8%;
@@ -217,13 +207,12 @@
     .section-title h2{
       font-size:2.7rem;
       margin-bottom:15px;
+      color:var(--secondary);
     }
 
     .section-title p{
       color:var(--gray);
     }
-
-    /* PROJECTS */
 
     .project-grid{
       display:grid;
@@ -233,12 +222,12 @@
 
     .project-card{
       background:white;
+      border-radius:22px;
       padding:30px;
-      border-radius:24px;
       box-shadow:var(--shadow);
-      transition:0.3s;
       position:relative;
       overflow:hidden;
+      transition:0.3s;
     }
 
     .project-card:hover{
@@ -257,6 +246,7 @@
 
     .project-card h3{
       margin-bottom:15px;
+      color:var(--secondary);
     }
 
     .project-card p{
@@ -265,32 +255,16 @@
       margin-bottom:20px;
     }
 
-    .tags{
+    .links{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:20px;
-    }
-
-    .tag{
-      background:#dbeafe;
-      color:#1d4ed8;
-      padding:8px 14px;
-      border-radius:50px;
-      font-size:0.8rem;
-      font-weight:600;
-    }
-
-    .project-links{
-      display:flex;
       gap:12px;
-      flex-wrap:wrap;
     }
 
-    .project-links a{
+    .links a{
       text-decoration:none;
       background:#eff6ff;
-      color:#2563eb;
+      color:var(--primary);
       padding:10px 16px;
       border-radius:10px;
       font-size:0.9rem;
@@ -298,25 +272,27 @@
       transition:0.3s;
     }
 
-    .project-links a:hover{
-      background:#2563eb;
+    .links a:hover{
+      background:var(--primary);
       color:white;
     }
 
-    /* VIDEO SECTION */
-
     .video-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+      align-items:stretch;
     }
 
     .video-card{
       background:white;
-      border-radius:24px;
+      border-radius:22px;
       overflow:hidden;
       box-shadow:var(--shadow);
-      transition:0.3s;
+      transition:0.35s;
+      display:flex;
+      flex-direction:column;
+      height:100%;
     }
 
     .video-card:hover{
@@ -324,106 +300,110 @@
     }
 
     .video-thumb{
-      height:220px;
-      background:linear-gradient(135deg,#2563eb,#60a5fa);
+      height:240px;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
+    }
+
+    .video-thumb::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+    }
+
+    .video-thumb span{
+      position:relative;
+      z-index:2;
       color:white;
-      font-size:4rem;
+      font-size:3rem;
     }
 
     .video-content{
       padding:25px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
     }
 
     .video-content h3{
-      margin-bottom:12px;
+      margin-bottom:14px;
+      color:var(--secondary);
+      min-height:60px;
     }
 
     .video-content p{
       color:var(--gray);
       line-height:1.8;
-      margin-bottom:20px;
+      margin-bottom:25px;
+      flex:1;
     }
 
-    /* LXD GALLERY */
+    .video-content .btn{
+      width:100%;
+      text-align:center;
+    }
 
     .gallery{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
+      gap:22px;
     }
 
     .gallery-item{
       background:white;
-      border-radius:20px;
+      border-radius:18px;
       overflow:hidden;
       box-shadow:var(--shadow);
       transition:0.3s;
     }
 
     .gallery-item:hover{
-      transform:translateY(-8px);
+      transform:scale(1.02);
     }
 
     .gallery-placeholder{
       height:220px;
-      background:linear-gradient(135deg,#c7d2fe,#dbeafe);
       display:flex;
       align-items:center;
       justify-content:center;
+      background:linear-gradient(135deg,#c7d2fe,#dbeafe);
       color:#1e3a8a;
       font-weight:600;
     }
 
-    .gallery-item img{
-      height:220px;
-      object-fit:cover;
-    }
-
     .gallery-content{
-      padding:22px;
+      padding:18px;
     }
-
-    .gallery-content h3{
-      margin-bottom:12px;
-    }
-
-    .gallery-content p{
-      color:var(--gray);
-      line-height:1.8;
-    }
-
-    /* ABOUT */
 
     .about{
       background:linear-gradient(135deg,#eff6ff,#ffffff);
+      border-radius:28px;
       padding:60px;
-      border-radius:30px;
     }
 
     .about p{
-      line-height:2;
       color:var(--gray);
-      margin-top:18px;
+      line-height:2;
+      margin-top:20px;
     }
 
-    /* FOOTER */
-
     footer{
-      background:#0f172a;
+      background:var(--secondary);
       color:white;
       text-align:center;
-      padding:40px 20px;
+      padding:35px 20px;
       margin-top:70px;
     }
 
     footer p{
       opacity:0.8;
     }
-
-    /* SCROLL ANIMATION */
 
     .hidden{
       opacity:0;
@@ -436,75 +416,62 @@
       transform:translateY(0);
     }
 
-    /* VIDEO MODAL */
-
-    .video-modal{
+    .video-overlay{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.85);
-      display:none;
+      background:rgba(0,0,0,0.88);
+      display:flex;
       align-items:center;
       justify-content:center;
-      z-index:9999;
-      padding:30px;
-      backdrop-filter:blur(5px);
+      padding:20px;
+      z-index:5000;
+      opacity:0;
+      pointer-events:none;
+      transition:0.3s;
     }
 
-    .video-modal.active{
-      display:flex;
+    .video-overlay.active{
+      opacity:1;
+      pointer-events:auto;
     }
 
-    .video-modal-content{
+    .video-popup{
       width:90%;
-      max-width:1100px;
-      background:black;
+      max-width:1000px;
+      position:relative;
       border-radius:20px;
       overflow:hidden;
-      position:relative;
-      animation:popup 0.3s ease;
+      background:black;
+      transform:scale(0.9);
+      transition:0.3s;
     }
 
-    @keyframes popup{
-      from{
-        transform:scale(0.9);
-        opacity:0;
-      }
-      to{
-        transform:scale(1);
-        opacity:1;
-      }
+    .video-overlay.active .video-popup{
+      transform:scale(1);
     }
 
-    .close-modal{
+    .video-popup video{
+      width:100%;
+      max-height:80vh;
+      display:block;
+      background:black;
+    }
+
+    .close-video{
       position:absolute;
       top:15px;
       right:15px;
-      width:45px;
-      height:45px;
+      width:42px;
+      height:42px;
+      border:none;
       border-radius:50%;
-      background:rgba(0,0,0,0.5);
-      color:white;
-      font-size:2rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      background:white;
+      color:#111827;
+      font-size:1.2rem;
+      font-weight:700;
       cursor:pointer;
       z-index:10;
     }
-
-    .close-modal:hover{
-      background:#2563eb;
-    }
-
-    #portfolioVideo,
-    #reviewFrame{
-      width:100%;
-      height:80vh;
-      background:black;
-      display:none;
-    }
-
-    /* RESPONSIVE */
 
     @media(max-width:900px){
 
@@ -513,11 +480,11 @@
         text-align:center;
       }
 
-      .hero-left h1{
+      .hero-content h1{
         font-size:3rem;
       }
 
-      .hero-buttons{
+      .hero-btns{
         justify-content:center;
       }
 
@@ -527,6 +494,7 @@
       }
 
       nav ul{
+        gap:16px;
         flex-wrap:wrap;
         justify-content:center;
       }
@@ -535,8 +503,8 @@
 
     @media(max-width:600px){
 
-      .hero-left h1{
-        font-size:2.2rem;
+      .hero-content h1{
+        font-size:2.3rem;
       }
 
       section{
@@ -547,11 +515,6 @@
         padding:35px;
       }
 
-      #portfolioVideo,
-      #reviewFrame{
-        height:60vh;
-      }
-
     }
 
   </style>
@@ -559,8 +522,6 @@
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
 
   <nav>
 
@@ -575,71 +536,76 @@
 
   </nav>
 
-  <!-- HERO -->
-
   <section class="hero">
 
-    <div class="hero-left">
+    <div class="hero-content">
 
       <h1>
-        Learning Experience Designer
+        Instructional Designer
         <br>
         <span>& eLearning Developer</span>
       </h1>
 
       <p>
-        Passionate Learning Experience Designer with expertise in instructional design,
-        storyboarding, script writing, eLearning development and safety training modules.
+        Passionate Learning Experience Designer with expertise in eLearning development,
+        instructional design, storyboarding, scripting, safety training modules,
+        and engaging digital learning experiences.
       </p>
 
-      <div class="hero-buttons">
+      <div class="hero-btns">
         <a href="#projects" class="btn btn-primary">View Portfolio</a>
         <a href="#" class="btn btn-outline">Download Resume</a>
       </div>
 
     </div>
 
-    <div class="hero-right">
+    <div class="hero-card">
 
       <h3>Core Skills</h3>
 
       <div class="skill">
-        <div class="skill-top">
-          <span>Instructional Design</span>
-          <span>95%</span>
-        </div>
+        <span>
+          <p>Instructional Design</p>
+          <p>95%</p>
+        </span>
         <div class="bar"><div style="width:95%"></div></div>
       </div>
 
       <div class="skill">
-        <div class="skill-top">
-          <span>Storyboarding</span>
-          <span>92%</span>
-        </div>
+        <span>
+          <p>Storyboarding</p>
+          <p>92%</p>
+        </span>
         <div class="bar"><div style="width:92%"></div></div>
       </div>
 
       <div class="skill">
-        <div class="skill-top">
-          <span>Script Writing</span>
-          <span>90%</span>
-        </div>
+        <span>
+          <p>Script Writing</p>
+          <p>90%</p>
+        </span>
         <div class="bar"><div style="width:90%"></div></div>
       </div>
 
       <div class="skill">
-        <div class="skill-top">
-          <span>eLearning Development</span>
-          <span>94%</span>
-        </div>
+        <span>
+          <p>eLearning Development</p>
+          <p>94%</p>
+        </span>
         <div class="bar"><div style="width:94%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span>
+          <p>Safety Training Modules</p>
+          <p>96%</p>
+        </span>
+        <div class="bar"><div style="width:96%"></div></div>
       </div>
 
     </div>
 
   </section>
-
-  <!-- PROJECTS -->
 
   <section id="projects">
 
@@ -655,20 +621,14 @@
         <h3>Grinding Safety</h3>
 
         <p>
-          Safety training module covering grinding hazards, PPE,
-          wheel inspection and operational procedures.
+          Complete safety training module covering grinding wheel inspection,
+          hazards, PPE, operational procedures, and emergency response.
         </p>
 
-        <div class="tags">
-          <span class="tag">Storyboard</span>
-          <span class="tag">Script</span>
-          <span class="tag">Review Link</span>
-        </div>
-
-        <div class="project-links">
-          <a href="#">View Script</a>
-          <a href="#">View Storyboard</a>
-          <a href="#">Review Module</a>
+        <div class="links">
+          <a href="docs/Grinding safety.pdf" target="_blank">View Script</a>
+          <a href="https://docs.google.com/presentation/d/1JKHT_WVwVmKxcQkw2q8LMv-rDLNBDwTEBK5phvum648/edit?usp=drive_link" target="_blank">View Storyboard</a>
+          <a href="https://360.articulate.com/review/content/c9131fcc-dc7f-4519-8387-1dd6aba05882/review" target="_blank">Review Module</a>
         </div>
 
       </div>
@@ -678,20 +638,14 @@
         <h3>Emergency Preparedness</h3>
 
         <p>
-          Emergency response module focused on evacuation,
-          communication flow and emergency drills.
+          Emergency response learning module focused on evacuation,
+          communication flow, first response actions and mock drills.
         </p>
 
-        <div class="tags">
-          <span class="tag">Storyboard</span>
-          <span class="tag">Script</span>
-          <span class="tag">Review Link</span>
-        </div>
-
-        <div class="project-links">
-          <a href="#">View Script</a>
-          <a href="#">View Storyboard</a>
-          <a href="#">Review Module</a>
+        <div class="links">
+          <a href="docs/Emergency Preparedness.pdf" target="_blank">View Script</a>
+          <a href="https://docs.google.com/presentation/d/1BU_XYfF6P3pvDcKkd-m4-RSgs3bXSNaqUaijtI7zpLg/edit?usp=drive_link" target="_blank">View Storyboard</a>
+          <a href="https://360.articulate.com/review/content/c96c4bde-ae61-4c36-960b-aa9200df7ac0/review" target="_blank">Review Module</a>
         </div>
 
       </div>
@@ -701,20 +655,44 @@
         <h3>Electrical Safety & LOTO</h3>
 
         <p>
-          Interactive learning module explaining electrical hazards,
-          isolation systems and LOTO procedures.
+          Interactive module explaining electrical hazards,
+          lockout/tagout procedures and workplace safety practices.
         </p>
 
-        <div class="tags">
-          <span class="tag">Storyboard</span>
-          <span class="tag">Script</span>
-          <span class="tag">Review Link</span>
+        <div class="links">
+          <a href="docs/Electrical Safety and LOTO.pdf" target="_blank">View Script</a>
+          <a href="https://docs.google.com/presentation/d/1HGrXcUtFuSmux7TZ_rhp6iKlKxoBu2HqMwQGAjdbNGE/edit?usp=drive_link" target="_blank">View Storyboard</a>
+          <a href="https://360.articulate.com/review/content/a030e9ad-37b9-4cc1-a2dc-be5c2fbf11fb/review" target="_blank">Review Module</a>
         </div>
 
-        <div class="project-links">
-          <a href="#">View Script</a>
-          <a href="#">View Storyboard</a>
-          <a href="#">Review Module</a>
+      </div>
+
+      <div class="project-card hidden">
+
+        <h3>Occupational Safety</h3>
+
+        <p>
+          Workplace occupational safety awareness module focused on
+          hazard identification and preventive safety measures.
+        </p>
+
+        <div class="links">
+          <a href="https://360.articulate.com/review/content/822bbb53-2b86-4973-91f4-85856d2a5082/review" target="_blank">Review Module</a>
+        </div>
+
+      </div>
+
+      <div class="project-card hidden">
+
+        <h3>Environmental Compliances and Management System</h3>
+
+        <p>
+          Training module designed to educate employees on environmental
+          standards, sustainability and compliance procedures.
+        </p>
+
+        <div class="links">
+          <a href="https://360.articulate.com/review/content/01d48529-f8c0-42d9-bbe3-d16ee722d55f/review" target="_blank">Review Module</a>
         </div>
 
       </div>
@@ -722,8 +700,6 @@
     </div>
 
   </section>
-
-  <!-- VIDEOS -->
 
   <section id="videos">
 
@@ -736,25 +712,24 @@
 
       <div class="video-card hidden">
 
-        <div class="video-thumb">▶</div>
+        <div class="video-thumb"
+          style="background-image:url('images/1.png');">
+          <span>▶</span>
+        </div>
 
         <div class="video-content">
 
           <h3>Grinding Safety Video</h3>
 
           <p>
-            Safety training video demonstrating grinding operations
-            and PPE requirements.
+            Visual training video demonstrating safe grinding operations,
+            wheel inspection and PPE requirements.
           </p>
 
-          <a
-            href="javascript:void(0)"
-            class="btn btn-primary"
-            onclick="openLocalVideo('videos/grinding safety.mp4')">
-
+          <button class="btn btn-primary watch-video"
+            data-video="videos/grinding safety.mp4">
             Watch Video
-
-          </a>
+          </button>
 
         </div>
 
@@ -762,25 +737,24 @@
 
       <div class="video-card hidden">
 
-        <div class="video-thumb">▶</div>
+        <div class="video-thumb"
+          style="background-image:url('images/2.png');">
+          <span>▶</span>
+        </div>
 
         <div class="video-content">
 
           <h3>General Safety Awareness</h3>
 
           <p>
-            Workplace safety awareness video focused on hazard prevention
-            and employee responsibility.
+            Workplace safety awareness video covering basic safety culture,
+            hazard prevention and employee responsibility.
           </p>
 
-          <a
-            href="javascript:void(0)"
-            class="btn btn-primary"
-            onclick="openLocalVideo('videos/general safety.mp4')">
-
+          <button class="btn btn-primary watch-video"
+            data-video="videos/general safety.mp4">
             Watch Video
-
-          </a>
+          </button>
 
         </div>
 
@@ -788,24 +762,24 @@
 
       <div class="video-card hidden">
 
-        <div class="video-thumb">▶</div>
+        <div class="video-thumb"
+          style="background-image:url('images/3.png');">
+          <span>▶</span>
+        </div>
 
         <div class="video-content">
 
           <h3>Fire Safety Training</h3>
 
           <p>
-            Fire emergency awareness module covering evacuation
-            and extinguisher usage.
+            Fire emergency awareness video focused on evacuation,
+            extinguisher usage and emergency communication.
           </p>
 
-          <a
-            href="javascript:void(0)"
-            class="btn btn-primary"
-            onclick="openReviewLink('https://360.articulate.com/review/content/c35a34ae-15fe-467b-ad16-8c4747ea67d1/review')">
-
+          <a href="https://360.articulate.com/review/content/c35a34ae-15fe-467b-ad16-8c4747ea67d1/review"
+            target="_blank"
+            class="btn btn-primary">
             Watch Video
-
           </a>
 
         </div>
@@ -816,99 +790,46 @@
 
   </section>
 
-  <!-- LXD WORKS -->
-
   <section id="lxd">
 
     <div class="section-title hidden">
-
       <h2>LXD Project Showcase</h2>
-
-      <p>
-        Visual learning experience design samples and eLearning screen showcases.
-      </p>
-
+      <p>Selected screenshots and visual learning experience design samples.</p>
     </div>
 
     <div class="gallery">
 
       <div class="gallery-item hidden">
-
-        <div class="gallery-placeholder">
-          Add Screenshot
-        </div>
-
+        <div class="gallery-placeholder">Add Screenshot</div>
         <div class="gallery-content">
-
           <h3>Interactive Learning Screen</h3>
-
-          <p>
-            Engaging interactive learning screen designed for learner participation.
-          </p>
-
         </div>
-
       </div>
 
       <div class="gallery-item hidden">
-
-        <div class="gallery-placeholder">
-          Add Screenshot
-        </div>
-
+        <div class="gallery-placeholder">Add Screenshot</div>
         <div class="gallery-content">
-
-          <h3>Scenario-Based Learning</h3>
-
-          <p>
-            Real-world scenario-based learning experience with decision-making flow.
-          </p>
-
+          <h3>Scenario-Based Design</h3>
         </div>
-
       </div>
 
       <div class="gallery-item hidden">
-
-        <div class="gallery-placeholder">
-          Add Screenshot
-        </div>
-
+        <div class="gallery-placeholder">Add Screenshot</div>
         <div class="gallery-content">
-
-          <h3>Gamified eLearning</h3>
-
-          <p>
-            Gamified learning design focused on engagement and interaction.
-          </p>
-
+          <h3>Gamified Learning Experience</h3>
         </div>
-
       </div>
 
       <div class="gallery-item hidden">
-
-        <div class="gallery-placeholder">
-          Add Screenshot
-        </div>
-
+        <div class="gallery-placeholder">Add Screenshot</div>
         <div class="gallery-content">
-
-          <h3>Responsive Learning Layout</h3>
-
-          <p>
-            Mobile responsive eLearning screen layout optimized for all devices.
-          </p>
-
+          <h3>Responsive eLearning Layout</h3>
         </div>
-
       </div>
 
     </div>
 
   </section>
-
-  <!-- ABOUT -->
 
   <section id="about">
 
@@ -919,20 +840,18 @@
       </div>
 
       <p>
-        I am a Learning Experience Designer passionate about creating
-        impactful learner-centric digital learning experiences.
+        I am a Learning Experience Designer passionate about creating impactful,
+        learner-centric digital learning experiences.
       </p>
 
       <p>
-        My expertise includes instructional design, storyboard development,
-        script writing, eLearning development and safety training solutions.
+        I specialize in converting complex technical information into engaging,
+        interactive and visually compelling learning content.
       </p>
 
     </div>
 
   </section>
-
-  <!-- FOOTER -->
 
   <footer>
 
@@ -946,34 +865,21 @@
 
   </footer>
 
-  <!-- VIDEO MODAL -->
+  <div class="video-overlay" id="videoOverlay">
 
-  <div class="video-modal" id="videoModal">
+    <div class="video-popup">
 
-    <div class="video-modal-content">
+      <button class="close-video" id="closeVideo">✕</button>
 
-      <span class="close-modal" onclick="closeVideoModal()">✕</span>
-
-      <video id="portfolioVideo" controls>
-        <source id="videoSource" src="" type="video/mp4">
+      <video id="popupVideo" controls>
+        <source src="" type="video/mp4">
       </video>
-
-      <iframe
-        id="reviewFrame"
-        src=""
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
 
     </div>
 
   </div>
 
-  <!-- JAVASCRIPT -->
-
   <script>
-
-    // SCROLL ANIMATION
 
     const hiddenElements = document.querySelectorAll('.hidden');
 
@@ -991,73 +897,52 @@
 
     hiddenElements.forEach((el) => observer.observe(el));
 
-    // VIDEO MODAL
+    const watchButtons = document.querySelectorAll('.watch-video');
 
-    const modal = document.getElementById("videoModal");
-    const video = document.getElementById("portfolioVideo");
-    const source = document.getElementById("videoSource");
-    const reviewFrame = document.getElementById("reviewFrame");
+    const overlay = document.getElementById('videoOverlay');
 
-    function openLocalVideo(videoPath){
+    const popupVideo = document.getElementById('popupVideo');
 
-      document.body.style.overflow = "hidden";
+    const closeVideo = document.getElementById('closeVideo');
 
-      modal.classList.add("active");
+    watchButtons.forEach(button => {
 
-      reviewFrame.style.display = "none";
-      reviewFrame.src = "";
+      button.addEventListener('click', () => {
 
-      video.style.display = "block";
+        const videoSrc = button.getAttribute('data-video');
 
-      source.src = videoPath;
+        popupVideo.src = videoSrc;
 
-      video.load();
-      video.play();
-    }
+        overlay.classList.add('active');
 
-    function openReviewLink(url){
+        document.body.classList.add('no-scroll');
 
-      document.body.style.overflow = "hidden";
+        popupVideo.play();
 
-      modal.classList.add("active");
-
-      video.pause();
-      video.style.display = "none";
-
-      reviewFrame.style.display = "block";
-      reviewFrame.src = url;
-    }
-
-    function closeVideoModal(){
-
-      document.body.style.overflow = "auto";
-
-      modal.classList.remove("active");
-
-      video.pause();
-
-      source.src = "";
-      video.load();
-
-      reviewFrame.src = "";
-    }
-
-    // ESC CLOSE
-
-    document.addEventListener("keydown", function(e){
-
-      if(e.key === "Escape"){
-        closeVideoModal();
-      }
+      });
 
     });
 
-    // OUTSIDE CLICK CLOSE
+    function closeVideoPopup(){
 
-    modal.addEventListener("click", function(e){
+      overlay.classList.remove('active');
 
-      if(e.target === modal){
-        closeVideoModal();
+      document.body.classList.remove('no-scroll');
+
+      popupVideo.pause();
+
+      popupVideo.currentTime = 0;
+
+      popupVideo.src = "";
+
+    }
+
+    closeVideo.addEventListener('click', closeVideoPopup);
+
+    overlay.addEventListener('click', (e) => {
+
+      if(e.target === overlay){
+        closeVideoPopup();
       }
 
     });
